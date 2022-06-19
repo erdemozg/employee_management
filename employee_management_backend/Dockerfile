@@ -10,6 +10,7 @@ COPY EmployeeManagement.Backend.DatabaseContext/*.csproj ./EmployeeManagement.Ba
 COPY EmployeeManagement.Backend.Interfaces/*.csproj ./EmployeeManagement.Backend.Interfaces/
 COPY EmployeeManagement.Backend.Model.Entity/*.csproj ./EmployeeManagement.Backend.Model.Entity/
 COPY EmployeeManagement.Backend.Model.View/*.csproj ./EmployeeManagement.Backend.Model.View/
+COPY EmployeeManagement.Backend.Tests/*.csproj ./EmployeeManagement.Backend.Tests/
 
 RUN dotnet restore
 
@@ -20,6 +21,7 @@ COPY EmployeeManagement.Backend.DatabaseContext/. ./EmployeeManagement.Backend.D
 COPY EmployeeManagement.Backend.Interfaces/. ./EmployeeManagement.Backend.Interfaces/
 COPY EmployeeManagement.Backend.Model.Entity/. ./EmployeeManagement.Backend.Model.Entity/
 COPY EmployeeManagement.Backend.Model.View/. ./EmployeeManagement.Backend.Model.View/
+COPY EmployeeManagement.Backend.Tests/. ./EmployeeManagement.Backend.Tests/
 
 WORKDIR /source/EmployeeManagement.Backend.API
 RUN dotnet publish -c release -o /app --no-restore
