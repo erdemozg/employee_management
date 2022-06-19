@@ -1,11 +1,43 @@
 import { apiClient } from '../client/apiClient'
 
 export const employeeService = {
-  getEmployees
+  getAll,
+  get,
+  add,
+  update,
+  delete: _delete
 };
 
-function getEmployees(skip, take, count = 100) {
-  return apiClient.get(`/employee?skip=${skip}&take=${take}&count=${count}`)
+function getAll(searchTerm, skip, take = 100) {
+  return apiClient.get(`/employee?searchTerm=${searchTerm}&skip=${skip}&take=${take}`)
+    .then((response) => {
+        return response;
+    });
+}
+
+function get(id) {
+  return apiClient.get(`/employee/${id}`)
+    .then((response) => {
+        return response;
+    });
+}
+
+function add(employee){
+  return apiClient.post(`/employee`, employee)
+    .then((response) => {
+        return response;
+    });
+}
+
+function update(employee){
+  return apiClient.put(`/employee`, employee)
+    .then((response) => {
+        return response;
+    });
+}
+
+function _delete(id){
+  return apiClient.delete(`/employee/${id}`)
     .then((response) => {
         return response;
     });

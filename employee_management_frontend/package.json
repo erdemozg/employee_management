@@ -9,6 +9,8 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@vuepic/vue-datepicker": "^3.2.2",
+    "daisyui": "^2.15.4",
     "vue": "^3.2.36",
     "vue-router": "^4.0.15"
   },

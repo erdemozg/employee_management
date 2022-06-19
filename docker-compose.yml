@@ -13,6 +13,31 @@ services:
     volumes: 
       - db:/var/lib/postgresql/data
 
+  frontend:
+    build: 
+        context: ./employee_management_frontend
+        dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+        - "3000:8080"
+    depends_on:
+        - backend
+
+  backend:
+        build: 
+            context: ./employee_management_backend
+            dockerfile: Dockerfile
+        restart: unless-stopped
+        ports:
+            - "5000:80"
+        volumes: 
+            - ./files:/files
+        environment:
+          - FILES_PATH=/files
+        depends_on: 
+            - db
+
+
 volumes:
   db:
     driver: local

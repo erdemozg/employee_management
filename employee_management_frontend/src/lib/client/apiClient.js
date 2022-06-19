@@ -5,14 +5,16 @@ export const apiClient = {
   delete: _delete,
 };
 
+const baseUrl = import.meta.env.VITE_BACKEND_API_BASE_ADDRESS
+
 // main http verbs
 
 function get(path) {
   return makeRequest(path, "GET");
 }
 
-function post(path, body) {
-  return makeRequest(path, "POST", body);
+function post(path, body, isBodyJson = true) {
+  return makeRequest(path, "POST", body, isBodyJson);
 }
 
 function put(path, body) {
@@ -23,17 +25,19 @@ function _delete(path) {
   return makeRequest(path, "DELETE");
 }
 
-function makeRequest(path, method, body = null) {
+function makeRequest(path, method, body = null, isBodyJson = true) {
 
-  url = `https://localhost:7284/api/v1${path}`;
+  const url = `${baseUrl}${path}`;
 
   const requestOptions = {
     method: method,
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: body ? JSON.stringify(body) : null,
+    headers: { },
+    body: body ? (isBodyJson ? JSON.stringify(body) : body) : null,
   };
+
+  if (isBodyJson) {
+    requestOptions.headers["Content-Type"] = "application/json"
+  }
 
   return fetch(url, requestOptions).then(async (response) => {
     const responseText = await response.text();

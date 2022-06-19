@@ -3,6 +3,8 @@ using EmployeeManagement.Backend.Business;
 using EmployeeManagement.Backend.Interfaces;
 using EmployeeManagement.Backend.Model.View;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 
 namespace EmployeeManagement.Backend.API.Controllers;
 
@@ -18,9 +20,35 @@ public class EmployeeController : BaseController
         _business = new EmployeeManagementBusiness(context);
     }
 
-    [HttpGet(Name = "GetEmployees")]
-    public IEnumerable<EmployeeModel> Get()
+    [HttpGet]
+    public IEnumerable<EmployeeModel> GetAll(string? searchTerm, int skip, int take)
     {
-        return _business.GetEmployees();
+        searchTerm = searchTerm ?? string.Empty;
+
+        return _business.GetEmployees(searchTerm, skip, take);
+    }
+
+    [HttpGet("{id}")]
+    public EmployeeModel GetById(int id)
+    {
+        return _business.GetEmployee(id);
+    }
+
+    [HttpPost]
+    public GenericResult Post(EmployeeModel employee)
+    {
+        return _business.AddOrUpdateEmployee(employee);
+    }
+
+    [HttpPut]
+    public GenericResult Put(EmployeeModel employee)
+    {
+        return _business.AddOrUpdateEmployee(employee);
+    }
+
+    [HttpDelete("{id}")]
+    public GenericResult Delete(int id)
+    {
+        return _business.DeleteEmployee(id);
     }
 }

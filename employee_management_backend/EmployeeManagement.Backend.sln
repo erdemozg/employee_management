@@ -31,6 +31,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.Backend.
 		{2B22BDFF-C616-439C-9F87-C8609CB5C08B} = {2B22BDFF-C616-439C-9F87-C8609CB5C08B}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement.Backend.Tests", "EmployeeManagement.Backend.Tests\EmployeeManagement.Backend.Tests.csproj", "{BF72FD8E-A9CD-4FFB-800F-54A5AD85ED43}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{A20BCC32-3710-4A18-BB13-E0F272732432}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A20BCC32-3710-4A18-BB13-E0F272732432}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A20BCC32-3710-4A18-BB13-E0F272732432}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF72FD8E-A9CD-4FFB-800F-54A5AD85ED43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF72FD8E-A9CD-4FFB-800F-54A5AD85ED43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF72FD8E-A9CD-4FFB-800F-54A5AD85ED43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF72FD8E-A9CD-4FFB-800F-54A5AD85ED43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

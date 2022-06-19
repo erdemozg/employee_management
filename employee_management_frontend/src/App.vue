@@ -9,7 +9,7 @@ import ImportIcon from '@/components/icons/IconAddDocument.vue'
   <!-- main wrapper -->
   <div class="flex flex-row">
     <!-- left menu -->
-    <div class="h-screen p-4 bg-gray-900 w-72">
+    <div class="min-h-screen py-4 px-8 bg-gray-900 w-80">
       <!-- brand -->
       <a href="/" class="p-4 flex flex-col mb-8 border-b-2">
         <span class="text-gray-100 text-2xl">

@@ -3,8 +3,12 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="27.2.1" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\EmployeeManagement.Backend.Interfaces\EmployeeManagement.Backend.Interfaces.csproj" />
