@@ -15,6 +15,9 @@ All the system components can be run with docker-compose:
 
 `docker-compose up -d`
 
+After this command the application should be accessible from the address: http://localhost:3000/
+
+
 If system components are to be run individually some requirements should be satisfied.
 
 - A running PostgreSQL server instance should be accessible with a database named "employee_management"
