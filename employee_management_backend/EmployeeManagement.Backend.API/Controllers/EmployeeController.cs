@@ -51,4 +51,10 @@ public class EmployeeController : BaseController
     {
         return _business.DeleteEmployee(id);
     }
+
+    [HttpDelete("all")]
+    public GenericResult DeleteAll()
+    {
+        return _business.DeleteAllEmployees();
+    }
 }

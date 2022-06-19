@@ -91,6 +91,11 @@ namespace EmployeeManagement.Backend.Business
 
             return ret;
         }
-        
+
+        public GenericResult DeleteAllEmployees()
+        {
+            return _context.DeleteAllEmployees();
+        }
+
     }
 }

@@ -117,7 +117,22 @@ export default {
           this.queryInProgress = false;
         }
       }
-    }
+    },
+    deleteAllEmployees(){
+      const res = confirm(`Are you sure you want to delete all employees?`)
+      if (res) {
+        this.queryInProgress = true;
+        employeeService.deleteAll().then(result => {
+          this.queryInProgress = false;
+          if (result.isOK) {
+            this.refreshTable()
+          }
+          else {
+            alert(result.message)
+          }
+        });
+      }
+    },
   },
   mounted() {
     this.fetchData()
@@ -151,6 +166,10 @@ export default {
             <TrashIcon/>
             Delete Selected Rows
           </button>
+          <button class="btn btn-sm btn-outline btn-error gap-2" :class="{'btn-disabled': queryInProgress}" @click="deleteAllEmployees">
+            <TrashIcon/>
+            Delete All
+          </button> 
         </div>
         <div>
           <input type="text" placeholder="filter..." v-model="searchTerm" @keyup="searchTermChanged" class="input input-sm input-bordered" />

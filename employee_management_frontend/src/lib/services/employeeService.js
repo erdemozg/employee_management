@@ -5,7 +5,8 @@ export const employeeService = {
   get,
   add,
   update,
-  delete: _delete
+  delete: _delete,
+  deleteAll
 };
 
 function getAll(searchTerm, skip, take = 100) {
@@ -38,6 +39,13 @@ function update(employee){
 
 function _delete(id){
   return apiClient.delete(`/employee/${id}`)
+    .then((response) => {
+        return response;
+    });
+}
+
+function deleteAll(){
+  return apiClient.delete(`/employee/all`)
     .then((response) => {
         return response;
     });

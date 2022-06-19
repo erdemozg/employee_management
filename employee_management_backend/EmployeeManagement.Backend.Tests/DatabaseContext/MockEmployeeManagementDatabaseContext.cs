@@ -37,6 +37,11 @@ namespace EmployeeManagement.Backend.Tests.DatabaseContext
             throw new NotImplementedException();
         }
 
+        public GenericResult DeleteAllEmployees()
+        {
+            throw new NotImplementedException();
+        }
+
         public GenericResult DeleteEmployee(int id)
         {
             throw new NotImplementedException();

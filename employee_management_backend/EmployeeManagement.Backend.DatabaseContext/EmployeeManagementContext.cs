@@ -126,6 +126,24 @@ namespace EmployeeManagement.Backend.DatabaseContext
             return res;
         }
 
+        public GenericResult DeleteAllEmployees()
+        {
+            var res = new GenericResult();
+
+            try
+            {
+                this.Database.ExecuteSqlRaw("TRUNCATE TABLE employee");
+
+                res.IsOK = true;
+            }
+            catch (Exception ex)
+            {
+                res.Message = ex.Message;
+            }
+
+            return res;
+        }
+
         #endregion
 
 

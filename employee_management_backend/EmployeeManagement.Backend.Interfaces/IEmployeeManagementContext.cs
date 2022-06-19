@@ -20,6 +20,8 @@ namespace EmployeeManagement.Backend.Interfaces
 
         GenericResult DeleteEmployee(int id);
 
+        GenericResult DeleteAllEmployees();
+
         #endregion
 
 
